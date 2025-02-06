@@ -1,5 +1,5 @@
 const App = () => {
-  const playListTitle = "My cool playlist";
+  const playListTitle = "My playlist";
   const songs = [
     {
       id: 1,
@@ -48,7 +48,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>React Intro</h1>
+      <h1>{playListTitle}</h1>
+      <Header songs={songs}></Header>
     </div>
   );
 };
@@ -56,3 +57,25 @@ const App = () => {
 export default App;
 
 // Create your new Components here
+
+function Header(props) {
+  const songs = props.songs;
+  return (
+    <ol className="list">
+      {songs.map((song) => {
+        return (
+          <body>
+            <h2 className="song-list">{song.title}</h2>
+            <p className="song-item">{song.artist}</p>
+
+            <img
+              className="song-img"
+              src={song.albumCover}
+              alt="image of album cover"
+            />
+          </body>
+        );
+      })}
+    </ol>
+  );
+}
