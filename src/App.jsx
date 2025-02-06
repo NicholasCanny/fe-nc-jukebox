@@ -1,5 +1,4 @@
 import Songs from "./Songs";
-import PlayCounts from "./Songs";
 
 const App = () => {
   const playListTitle = "My playlist";
@@ -42,18 +41,21 @@ const App = () => {
     },
   ];
   const playCounts = {
-    "Dreams": 10,
+    Dreams: 10,
     "Enter Sandman": 5,
     "Don't stop me now": 8,
-    "Sledgehammer": 11,
+    Sledgehammer: 11,
   };
   const currentlyPlaying = 0;
 
   return (
     <div className="App">
       <h1>{playListTitle}</h1>
-      <Songs songs={songs} currentlyPlaying={currentlyPlaying}></Songs>
-      {/* <PlayCounts playCounts={playCounts} song={songs}></PlayCounts> */}
+      <Songs
+        songs={songs}
+        currentlyPlaying={currentlyPlaying}
+        playCounts={playCounts}
+      ></Songs>
     </div>
   );
 };

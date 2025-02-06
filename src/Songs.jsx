@@ -1,6 +1,10 @@
+import PlayCounts from "./PlayCounts";
+
 function Songs(props) {
   const songs = props.songs;
   const currentlyPlaying = props.currentlyPlaying;
+  const playCounts = props.playCounts;
+
   return (
     <ol className="list">
       <h2 className="song-current">
@@ -16,6 +20,7 @@ function Songs(props) {
               src={song.albumCover}
               alt="image of album cover"
             />
+            <PlayCounts playCount={playCounts[song.title]} />
           </body>
         );
       })}
